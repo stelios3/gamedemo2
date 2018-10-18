@@ -57,8 +57,7 @@ def print_room_items(room):
 
     """
 
-    x =(room["items"])
-    p = list_of_items(x)
+    p = list_of_items(room["items"])
     if p != (""):
         print ("There is " + p + " here." + "\n")  
   
@@ -77,8 +76,8 @@ def print_inventory_items(items):
 
     """
     x = list_of_items(inventory)
-    print ("You have " + x +".")
-    print ()
+    print ("You have " + x +"."+"\n")
+    
 
 def print_room(room):
     """This function takes a room as an input and nicely displays its name
@@ -127,12 +126,12 @@ def print_room(room):
     Note: <BLANKLINE> here means that doctest should expect a blank line.
     """
     # Display room name
-    print()
+    print ("")
     print(room["name"].upper())
-    print()
+    print("")
     # Display room description
     print(room["description"])
-    print()
+    print("")
     print_room_items(room)
     #
     # COMPLETE ME!
@@ -204,6 +203,8 @@ def print_menu(exits, room_items, inv_items):
     for direction in exits:
         # Print the exit name and where it leads to
         print_exit(direction, exit_leads_to(exits, direction))
+    print_room_items(room_items)
+    print_inventory_items(inv_items)
 
     #
     # COMPLETE ME!
