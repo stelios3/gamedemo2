@@ -24,10 +24,15 @@ def list_of_items(items):
     'money, a student handbook, laptop'
 
     """
-    new_items = ""
-    for n in range(len(items)):
-        new_items += (items[n]["name"] + ", ")
-    return new_items[0:len(new_items)-2]
+
+    
+    item_list = []
+  
+    for objects in range(0,len(items)):
+        item_list.append(items[objects]["name"])
+    return(", ".join(item_list))
+
+    
 
 def print_room_items(room):
     """This function takes a room as an input and nicely displays a list of items
@@ -71,8 +76,9 @@ def print_inventory_items(items):
     <BLANKLINE>
 
     """
-    m =[items]
-    print (list_of_items(m))
+    x = list_of_items(inventory)
+    print ("You have " + x +".")
+    print ()
 
 def print_room(room):
     """This function takes a room as an input and nicely displays its name
